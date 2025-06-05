@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\GestioneOrdiniEntrata">
+      <UniqueIdentifier>{eba1af30-c9c6-4be6-a9a9-b1b3e1ef4a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GestioneOrdiniEntrata">
+      <UniqueIdentifier>{8a78deb1-6aa3-494f-86c2-23084fd068bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GestioneStock">
+      <UniqueIdentifier>{821e692b-9abb-471d-b545-0a55fc49b060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gestione stock">
+      <UniqueIdentifier>{c15fa30d-1ef1-41e0-b847-0e16dbd6f559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GestioneOrdiniUscita">
+      <UniqueIdentifier>{93f5485b-471f-4894-a97c-3a45e83a15a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GestioneOrdiniUscita">
+      <UniqueIdentifier>{d4b274e8-e2c4-432b-94ba-eaf0b789c583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{1f1cbe9b-e3f5-4682-98fd-7292c5aa223a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\fonts">
+      <UniqueIdentifier>{bb0404f5-ef23-419a-9bd6-e786653235ab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Articolo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gestionex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ordine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GestioneOrdiniScreen.h">
+      <Filter>Header Files\GestioneOrdiniEntrata</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticoliDellOrdine.h">
+      <Filter>Header Files\GestioneOrdiniEntrata</Filter>
+    </ClInclude>
+    <ClInclude Include="Stock.h">
+      <Filter>Header Files\GestioneStock</Filter>
+    </ClInclude>
+    <ClInclude Include="DDT.h">
+      <Filter>Header Files\GestioneOrdiniEntrata</Filter>
+    </ClInclude>
+    <ClInclude Include="Cliente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Magazzino.h">
+      <Filter>Header Files\GestioneStock</Filter>
+    </ClInclude>
+    <ClInclude Include="OrdineEntrata.h">
+      <Filter>Header Files\GestioneOrdiniEntrata</Filter>
+    </ClInclude>
+    <ClInclude Include="GestioneStockScreen.h">
+      <Filter>Header Files\GestioneStock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\backends\imgui_impl_glfw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\backends\imgui_impl_opengl3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\imconfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\imgui_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GestioneOrdiniUscitaScreen.h">
+      <Filter>Header Files\GestioneOrdiniUscita</Filter>
+    </ClInclude>
+    <ClInclude Include="OrdineUscita.h">
+      <Filter>Header Files\GestioneOrdiniUscita</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ThemeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArticoliDelloStock.h">
+      <Filter>Header Files\GestioneStock</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ordine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Articolo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GestioneOrdiniScreen.cpp">
+      <Filter>Source Files\GestioneOrdiniEntrata</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticoliDellOrdine.cpp">
+      <Filter>Source Files\GestioneOrdiniEntrata</Filter>
+    </ClCompile>
+    <ClCompile Include="Stock.cpp">
+      <Filter>Source Files\Gestione stock</Filter>
+    </ClCompile>
+    <ClCompile Include="DDT.cpp">
+      <Filter>Source Files\GestioneOrdiniEntrata</Filter>
+    </ClCompile>
+    <ClCompile Include="Cliente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Magazzino.cpp">
+      <Filter>Source Files\Gestione stock</Filter>
+    </ClCompile>
+    <ClCompile Include="GestioneStockScreen.cpp">
+      <Filter>Source Files\Gestione stock</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdineEntrata.cpp">
+      <Filter>Source Files\GestioneOrdiniEntrata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\backends\imgui_impl_glfw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\backends\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GestioneOrdiniUscitaScreen.cpp">
+      <Filter>Source Files\GestioneOrdiniUscita</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdineUscita.cpp">
+      <Filter>Source Files\GestioneOrdiniUscita</Filter>
+    </ClCompile>
+    <ClCompile Include="ArticoliDelloStock.cpp">
+      <Filter>Source Files\Gestione stock</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Gestionex.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Gestionex.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="IconaGestionex.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Icona Gestionex.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="iconGestionex.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon3.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="RedditSans-Italic-VariableFont_wght.ttf">
+      <Filter>assets\fonts</Filter>
+    </Font>
+    <Font Include="RedditSans-VariableFont_wght.ttf">
+      <Filter>assets\fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
