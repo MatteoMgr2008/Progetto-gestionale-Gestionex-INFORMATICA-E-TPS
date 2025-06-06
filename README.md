@@ -1,1 +1,1 @@
-# Gestionex
+# Progetto gestionale Gestionex
