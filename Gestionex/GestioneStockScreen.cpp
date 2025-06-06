@@ -23,6 +23,7 @@ void DrawGestioneStockScreen(bool& gestioneStock, vector<Magazzino>& listMagazzi
         ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.949f, 0.514f, 0.133f, 1.0f)); // Arancione normale
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(1.0f, 0.6f, 0.2f, 1.0f)); // Arancione chiaro (hover)
         ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.8f, 0.4f, 0.1f, 1.0f)); // Arancio scuro (clic)
+        ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0.0f, 0.8f, 0.2f, 1.0f));  // Verde per checkbox
 
         // Stili per la combo
         ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.9f, 0.9f, 0.9f, 1.0f)); // Sfondo combo
@@ -41,6 +42,7 @@ void DrawGestioneStockScreen(bool& gestioneStock, vector<Magazzino>& listMagazzi
         ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.949f, 0.514f, 0.133f, 1.0f)); // Arancione normale
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(1.0f, 0.6f, 0.2f, 1.0f)); // Arancione chiaro (hover)
         ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.8f, 0.4f, 0.1f, 1.0f)); // Arancio scuro (clic)
+        ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0.0f, 0.8f, 0.2f, 1.0f));  // Verde per checkbox
 
         // Stili per la combo
         ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.2f, 0.2f, 0.2f, 1.0f)); // Sfondo combo scuro
@@ -99,10 +101,14 @@ void DrawGestioneStockScreen(bool& gestioneStock, vector<Magazzino>& listMagazzi
             popUpAddStock = true;
         }
 
+        ImGui::Spacing();
+        ImGui::Spacing();
+        ImGui::Text("Cliccando su un rettangolo sottostante e' possibile visualizzare piu' informazioni riguardo un singolo stock del magazzino.");
+
         ImDrawList* draw_list = ImGui::GetWindowDrawList();
 
         float startX = 60.0f;
-        float startY = 150.0f;
+        float startY = 180.0f;
         float magazzinoWidth = 800.0f;
         float magazzinoHeight = 400.0f;
         float padding = 0.0f;
@@ -212,7 +218,7 @@ void DrawGestioneStockScreen(bool& gestioneStock, vector<Magazzino>& listMagazzi
     }
 
     ImGui::PopStyleVar();
-    ImGui::PopStyleColor(12);
+    ImGui::PopStyleColor(13);
     ImGui::End();
 }
 
@@ -226,12 +232,12 @@ void DrawPopUpAddStock(bool& popUpAddStock, Magazzino& magazzino, bool& errorPop
         ImGui::Text("Compila i seguenti campi per aggiungere un nuovo stock nel magazzino selezionato:");
         ImGui::Spacing();
         ImGui::InputText("Categoria dell'articolo", categoria, sizeof(categoria));
-        ImGui::InputFloat("Spazio totale dello stock", &spazioTotale);
-        ImGui::InputFloat("Spazio occupato dello stock", &spazioOccupato);
+        ImGui::InputFloat("Spazio totale dello stock (in mq)", &spazioTotale);
+        ImGui::InputFloat("Spazio occupato dello stock (in mq)", &spazioOccupato);
 		ImGui::Spacing();
 
         if (ImGui::Button("Aggiungi")) {
-            if (spazioTotale <= 0.0f || spazioOccupato < 0.0f) {
+            if (spazioTotale <= 0.0f || spazioOccupato < 0.0f || spazioTotale-spazioOccupato<0.0f) {
                 errorPopup = true;
             }
             else {
@@ -254,7 +260,7 @@ void DrawPopUpAddStock(bool& popUpAddStock, Magazzino& magazzino, bool& errorPop
         }
 
         if (ImGui::BeginPopupModal("ERRORE: Lo spazio rimanente nel magazzino e' esaurito", nullptr, ImGuiWindowFlags_AlwaysAutoResize)) {
-            ImGui::Text("Lo spazio occupato per lo stock di questa categoria e' maggiore dello spazio libero rimanente nel magazzino.");
+            ImGui::Text("Lo spazio occupato per lo stock di questa categoria e' maggiore dello spazio libero rimanente (spazio totale) nello stock del magazzino.");
             ImGui::Spacing();
             ImGui::Spacing();
             if (ImGui::Button("Chiudi", ImVec2(120, 0))) {
@@ -276,22 +282,51 @@ void DrawPopUpAddStock(bool& popUpAddStock, Magazzino& magazzino, bool& errorPop
 
 // Funzione per disegnare il popup di informazioni dello stock quando si clicca su uno stock specifico (il pulsante invisibile)
 void DrawInfoStockPopUp(bool& showPopup, Stock& stock, int stockIndex, Magazzino& magazzino) {
+    bool modificaPopup = false;
+
     if (showPopup) {
-        ImGui::Begin("Informazioni stock:", &showPopup);
-        ImGui::Text("Nome stock: %s", stock.getInfoStock().c_str());
-        ImGui::Text("Spazio Totale: %.2f", stock.getSpazioTotale());
-        ImGui::Text("Spazio Occupato: %.2f", stock.getSpazioOccupato());
-        if (ImGui::Button("Modifica")) {
-            // Logica per modificare lo stock
-            // Per esempio, si potrebbe aprire un altro popup per modificare i dettagli dello stock
+        ImGui::Begin("Informazioni sullo stock selezionato", &showPopup);
+        ImGui::Text("Di seguito sono presenti i principali dettagli di questo stock:");
+        ImGui::BulletText("Nome dello stock: %s", stock.getInfoStock().c_str());
+        ImGui::BulletText("Spazio totale dello stock: %.2f mq", stock.getSpazioTotale());
+        ImGui::BulletText("Spazio occupato dello stock: %.2f mq", stock.getSpazioOccupato());
+		ImGui::BulletText("Spazio rimanente dello stock: %.2f mq", stock.getSpazioTotale() - stock.getSpazioOccupato());
+		ImGui::Spacing();
+        ImGui::Separator();
+
+		ImGui::Text("I seguenti articoli sono stati immagazzinati in questo stock:");
+        list<ArticoliDelloStock> articoli = stock.getArticoliDelloStock();
+        if (articoli.empty()) {
+            ImGui::Text("Nessun articolo ancora presente in questo stock. E' necessario prima aggiungere uno o piu' articoli in entrata e trasferirli nello stock, in modo da poter essere visualizzati qui.");
+        } else {
+            for (auto& articolo : articoli) {
+                ImGui::BulletText("%s - Quantita' articolo: %d", articolo.getArticolo().getNomeArticolo().c_str(), articolo.getQuantita());
+            }
         }
-        if (ImGui::Button("Rimuovi")) {
+
+        ImGui::Spacing();
+        ImGui::Separator();
+
+		ImGui::Text("Seleziona una delle seguenti azioni da eseguire su questo stock:");
+        ImGui::Spacing();
+
+        if (ImGui::Button("Modifica i dettagli di questo stock")) {
+            modificaPopup = true;
+        }
+        ImGui::Spacing();
+        if (ImGui::Button("Elimina definitivamente questo stock")) {
             magazzino.rimuoviStock(stock);
             showPopup = false; // Chiude il popup dopo la rimozione
         }
+        ImGui::Spacing();
         if (ImGui::Button("Chiudi")) {
             showPopup = false;
         }
+
         ImGui::End();
 	}
+}
+
+void DrawModifyStockPopUp(bool& modificaPopup, Stock& stock, Magazzino& magazzino, int stockIndex) {
+
 }

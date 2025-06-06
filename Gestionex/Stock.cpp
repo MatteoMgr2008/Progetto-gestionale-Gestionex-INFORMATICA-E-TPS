@@ -29,15 +29,14 @@ void Stock::setSpazioOccupato(float spazioOccupato)
 	this->spazioOccupato = spazioOccupato;
 }
 
+// Imposta la lista finale degli articoli dello stock
 void Stock::setArticoliDelloStock(list<ArticoliDellOrdine> listaArticoli)
-{// Imposta la lista degli articoli dello stock
-
+{
 	for (auto& articolo : listaArticoli) {
 		// Aggiungi ogni articolo alla lista degli articoli dello stock
 		this->listaArticoliDelloStock.push_back(ArticoliDelloStock(articolo.getArticolo(), articolo.getQuantita()));
 		this->spazioOccupato += articolo.getArticolo().getSpazioOccupato() * articolo.getQuantita();
 	}
-
 }
 
 void Stock::liberaStock()
@@ -62,4 +61,10 @@ float Stock::getSpazioOccupato()
 float Stock::getSpazioTotale()
 {
 	return this->spazioTotale;
+}
+
+// Restituisce gli articoli dello stock selezionato di un magazzino esistente
+list<ArticoliDelloStock>& Stock::getArticoliDelloStock()
+{
+	return this->listaArticoliDelloStock;
 }

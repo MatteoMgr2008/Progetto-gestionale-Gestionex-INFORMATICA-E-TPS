@@ -79,11 +79,13 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	list<OrdineUscita> ordiniUscitaList; 
 	vector<Magazzino> magazziniList;
 
-	// Aggiunge due magazzini di esempio (md e lidl)
-	Magazzino magazzino1(2,"md");
+	// Aggiunge tre magazzini di esempio (MD, Lidl e Esselunga)
+	Magazzino magazzino1(2,"MD (magazzino di esempio)");
 	magazziniList.push_back(magazzino1);
-    Magazzino magazzino2(3, "lidl");
+    Magazzino magazzino2(3, "Lidl (magazzino di esempio)");
     magazziniList.push_back(magazzino2);
+    Magazzino magazzino3(4, "Esselunga (magazzino di esempio)");
+    magazziniList.push_back(magazzino3);
 
     // Ciclo principale dell'applicazione (finché la finestra non viene chiusa dall'utente)
     while (!glfwWindowShouldClose(window)) {

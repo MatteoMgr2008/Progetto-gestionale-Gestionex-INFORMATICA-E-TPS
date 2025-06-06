@@ -14,22 +14,49 @@ void DrawGestioneOrdiniUscitaScreen(bool& gestioneOrdini, list<OrdineUscita>& li
 
     // Applica i colori in base al tema
     if (theme == 0) { // Tema chiaro
+        // Colori pulsanti, testo, checkbox per il tema chiaro
         ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.0f, 0.0f, 0.0f, 1.0f)); // Testo nero
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.8f, 0.8f, 0.8f, 1.0f)); // Bottone grigio chiaro
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.7f, 0.7f, 0.7f, 1.0f)); // Hover grigio medio
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.6f, 0.6f, 0.6f, 1.0f)); // Active grigio scuro
+        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.8f, 0.2f, 0.6f, 1.0f)); // Fucsia normale
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.9f, 0.3f, 0.7f, 1.0f)); // Fucsia più chiaro (hover)
+        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.6f, 0.1f, 0.5f, 1.0f)); // Fucsia più scuro (clic)
+        ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0.8f, 0.2f, 0.6f, 1.0f));  // Fucsia per checkbox
+
+        // Stili per la combo
+        ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.9f, 0.9f, 0.9f, 1.0f)); // Sfondo combo
+        ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(0.8f, 0.8f, 0.8f, 1.0f)); // Hover combo
+        ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(0.7f, 0.7f, 0.7f, 1.0f)); // Active combo
+        ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.7f, 0.7f, 0.7f, 1.0f)); // Header selectable
+        ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.6f, 0.6f, 0.6f, 1.0f)); // Header hover
+        ImGui::PushStyleColor(ImGuiCol_HeaderActive, ImVec4(0.5f, 0.5f, 0.5f, 1.0f)); // Header active
+
+        // Stili per popup
+        ImGui::PushStyleColor(ImGuiCol_PopupBg, ImVec4(0.95f, 0.95f, 0.95f, 1.0f)); // Sfondo popup
+        ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.95f, 0.95f, 0.95f, 1.0f)); // Sfondo finestre
     }
     else { // Tema scuro
+        // Colori pulsanti, testo, checkbox per il tema scuro
         ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.9f, 0.9f, 1.0f)); // Testo bianco
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2f, 0.4f, 0.8f, 1.0f)); // Bottone blu
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.3f, 0.5f, 0.9f, 1.0f)); // Hover blu chiaro
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.1f, 0.3f, 0.7f, 1.0f)); // Active blu scuro
+        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.8f, 0.2f, 0.6f, 1.0f)); // Fucsia normale
+        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(0.9f, 0.3f, 0.7f, 1.0f)); // Fucsia più chiaro (hover)
+        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.6f, 0.1f, 0.5f, 1.0f)); // Fucsia più scuro (clic)
+        ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0.8f, 0.2f, 0.6f, 1.0f));  // Fucsia per checkbox
+
+        // Stili per la combo
+        ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.2f, 0.2f, 0.2f, 1.0f)); // Sfondo combo scuro
+        ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(0.3f, 0.3f, 0.3f, 1.0f)); // Hover combo
+        ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(0.4f, 0.4f, 0.4f, 1.0f)); // Active combo
+        ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.2f, 0.4f, 0.8f, 0.8f)); // Header selectable
+        ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.3f, 0.5f, 0.9f, 0.8f)); // Header hover
+        ImGui::PushStyleColor(ImGuiCol_HeaderActive, ImVec4(0.1f, 0.3f, 0.7f, 0.8f)); // Header active
+
+        // Stili per popup
+        ImGui::PushStyleColor(ImGuiCol_PopupBg, ImVec4(0.15f, 0.15f, 0.15f, 1.0f)); // Sfondo popup scuro
+        ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.15f, 0.15f, 0.15f, 1.0f)); // Sfondo finestre scuro
     }
 
     ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 8.0f);
 
     ImGui::Text("Opzioni disponibili in questa sezione:");
-    ImGui::Spacing();
 
     static bool showAddOrderWindow = false;
     static bool showModifyOrderWindow = false;
@@ -77,20 +104,17 @@ void DrawGestioneOrdiniUscitaScreen(bool& gestioneOrdini, list<OrdineUscita>& li
     ImGui::Separator();
     ImGui::Spacing();
 
-    if (ImGui::Button("Aggiungi Ordine", ImVec2(180, 40))) showAddOrderWindow = true;
+    if (ImGui::Button("Aggiungi un nuovo ordine", ImVec2(250, 40))) showAddOrderWindow = true;
     ImGui::SameLine();
-    if (ImGui::Button("Modifica Ordine", ImVec2(180, 40))) showModifyOrderWindow = true;
+    if (ImGui::Button("Modifica un ordine esistente", ImVec2(270, 40))) showModifyOrderWindow = true;
+    ImGui::SameLine();
+    if (ImGui::Button("Torna alla Homepage", ImVec2(250, 40))) gestioneOrdini = false;
 
-    ImGui::Spacing();
-    if (ImGui::Button("Torna alla Home", ImVec2(180, 40))) gestioneOrdini = false;
+    // Inserire pop-up o altre pagine qua in futuro
+    // TODO: Implementare le finestre popup per showAddOrderWindow, showModifyOrderWindow, showArticlesWindow e showTransferWindow
 
-    // Inserisci pop-up o altre pagine
-    // TODO: Implementare le finestre popup per showAddOrderWindow, showModifyOrderWindow, 
-    // showArticlesWindow e showTransferWindow
-
-    // Bilanciamento dello stack di stili
-    ImGui::PopStyleVar(1);     // Per FrameRounding
-    ImGui::PopStyleColor(4);   // Per i 4 colori pushati
+    ImGui::PopStyleVar(); // Ripristina FrameRounding
+    ImGui::PopStyleColor(13); // Ripristina i colori del tema principale
 
     ImGui::End();
 }

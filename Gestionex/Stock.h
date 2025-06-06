@@ -5,6 +5,7 @@
 #include "ArticoliDelloStock.h"
 
 using namespace std;
+
 class Stock
 {
 private:
@@ -22,6 +23,7 @@ public:
 	void setArticoliDelloStock(list<ArticoliDellOrdine> listaArticoli);
 	float getSpazioOccupato();
 	float getSpazioTotale();
+	list<ArticoliDelloStock>& getArticoliDelloStock();
 	void liberaStock();
 	string getInfoStock();
 

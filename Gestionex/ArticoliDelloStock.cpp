@@ -34,4 +34,3 @@ void ArticoliDelloStock::setQuantita(int quantita)
 {
 	this->quantita = quantita;
 }
-

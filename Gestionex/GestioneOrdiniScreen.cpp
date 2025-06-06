@@ -63,7 +63,6 @@ void DrawGestioneOrdiniScreen(bool& gestioneOrdini, list<OrdineEntrata>& listOrd
     ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 8.0f);
 
     ImGui::Text("Opzioni disponibili in questa sezione:");
-    ImGui::Spacing();
 
     static bool showAddOrderWindow = false;
     static bool showModifyOrderWindow = false;
@@ -99,9 +98,9 @@ void DrawGestioneOrdiniScreen(bool& gestioneOrdini, list<OrdineEntrata>& listOrd
         }
 
         ImGui::SameLine();
-        ImGui::Checkbox(("Controllo danni effettuato##" + to_string(index)).c_str(), &ordine.getCheckDanno());
+        ImGui::Checkbox(("Controllo della presenza di danni su ogni articolo effettuato##" + to_string(index)).c_str(), &ordine.getCheckDanno());
         ImGui::SameLine();
-        ImGui::Checkbox(("Controllo documenti effettuato##" + to_string(index)).c_str(), &ordine.getCheckDocumento());
+        ImGui::Checkbox(("Controllo dei documenti necessari effettuato##" + to_string(index)).c_str(), &ordine.getCheckDocumento());
         ImGui::SameLine();
         if (ordine.getCheckDanno() && ordine.getCheckDocumento()) {
             if (ImGui::Button(("Trasferisci gli articoli nello stock##" + to_string(index)).c_str(), ImVec2(300, 30))) {
@@ -127,6 +126,7 @@ void DrawGestioneOrdiniScreen(bool& gestioneOrdini, list<OrdineEntrata>& listOrd
 
     ImGui::PopStyleVar(); // Ripristina FrameRounding
     ImGui::PopStyleColor(13); // Ripristina i colori del tema principale
+
     ImGui::End();
 }
 
@@ -462,15 +462,17 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
     }
 
     // Mostra informazioni ordine
-    ImGui::Text("I seguenti articoli dell'ordine con ID Tracking %s verranno trasferiti in uno stock di un magazzino:",
-        ordine.getID_track().c_str());
+    ImGui::Text("I seguenti articoli dell'ordine con ID Tracking %s verranno trasferiti in uno stock di un magazzino:", ordine.getID_track().c_str());
 
     for (auto& articolo : ordine.getListaArticoli()) {
         ShowArticoliDellOrdine(articolo);
     }
 
     ImGui::Separator();
+    ImGui::Spacing();
+    ImGui::Spacing();
     ImGui::Text("Seleziona il magazzino di destinazione:");
+    ImGui::Spacing();
 
     // Gestione selezione magazzino
     if (listMagazzini.empty()) {
@@ -505,7 +507,8 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
         auto& stockList = selectedMagazzino.getStockList();
 
         if (stockList.empty()) {
-            ImGui::Text("Nessuno stock disponibile in questo magazzino.");
+            ImGui::Spacing();
+            ImGui::Text("Nessuno stock disponibile nel magazzino selezionato. E' necessario prima aggiungere uno o piu' nuovi stock nel magazzino nella sezione di gestione dello stock.");
         }
         else {
             // Reset dell'indice stock se fuori range
@@ -519,6 +522,10 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
             for (auto& stock : stockList) {
                 nomiStocks.push_back(stock.getInfoStock());
             }
+
+            ImGui::Spacing();
+            ImGui::Text("Seleziona lo stock del magazzino in cui desideri allocare gli articoli:");
+            ImGui::Spacing();
 
             // Combo box per stock
             const char* currentStockName = nomiStocks[selectedStockIndex].c_str();
@@ -535,8 +542,11 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
                 ImGui::EndCombo();
             }
 
+            ImGui::Spacing();
+            ImGui::Spacing();
+
             // Pulsante trasferici articoli dell'ordine nello stock
-            if (ImGui::Button("Trasferisci articoli nello stock selezionato")) {
+            if (ImGui::Button("Trasferisci gli articoli nello stock del magazzino selezionato")) {
                 auto& selectedStock = stockList[selectedStockIndex];
 
                 // Controlla se lo stock ha spazio sufficiente
@@ -546,7 +556,7 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
                 }
 
                 if (selectedStock.getSpazioOccupato() + spazioOccupato > selectedStock.getSpazioTotale()) {
-                    ImGui::OpenPopup("Errore di spazio insufficiente");
+                    ImGui::OpenPopup("ERRORE: Spazio nello stock selezionato insufficiente");
                     auto& stockList = selectedMagazzino.getStockList();
                 }
                 else {
@@ -555,28 +565,29 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
 
                     // Rimuovi l'ordine dalla lista dopo il trasferimento
                     listOrdini.erase(it);
-                    showTransferWindow = false; // Chiudi la finestra di trasferimento
 
-                    ImGui::OpenPopup("Trasferimento completato");
+                    ImGui::OpenPopup("Trasferimento degli articoli nello stock completato con successo");
                 }
             }
 
-            // Gestione popup di errore
-            if (ImGui::BeginPopupModal("Errore di spazio insufficiente", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
-                ImGui::Text("Spazio insufficiente nello stock selezionato!");
-                ImGui::Separator();
-                if (ImGui::Button("OK", ImVec2(120, 0))) {
+            // Gestione del popup di errore del trasferimento nello stock
+            if (ImGui::BeginPopupModal("ERRORE: Spazio nello stock selezionato insufficiente", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
+                ImGui::Text("Lo spazio indicato e' insufficiente per poter effetuare il trasferimento nello stock selezionato!");
+                ImGui::Spacing();
+                if (ImGui::Button("Chiudi", ImVec2(120, 0))) {
                     ImGui::CloseCurrentPopup();
+                    showTransferWindow = false; // Chiude la finestra di trasferimento
                 }
                 ImGui::EndPopup();
             }
 
-            // Gestione popup di successo
-            if (ImGui::BeginPopupModal("Trasferimento completato", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
-                ImGui::Text("Articoli trasferiti con successo!");
-                ImGui::Separator();
-                if (ImGui::Button("OK", ImVec2(120, 0))) {
+            // Gestione del popup di successo del trasferimento nello stock
+            if (ImGui::BeginPopupModal("Trasferimento degli articoli nello stock completato con successo", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
+                ImGui::Text("Gli articoli dell'ordine sono stati trasferiti con successo nello stock!");
+                ImGui::Spacing();
+                if (ImGui::Button("Chiudi", ImVec2(120, 0))) {
                     ImGui::CloseCurrentPopup();
+                    showTransferWindow = false; // Chiude la finestra di trasferimento
                 }
                 ImGui::EndPopup();
             }
@@ -587,5 +598,6 @@ void DrawTransferArticlesWindow(bool& showTransferWindow, int selectedOrderIndex
 
     // Ripristina i colori dei pulsanti
     ImGui::PopStyleColor(3);
+
     ImGui::End();
 }
