@@ -21,3 +21,5 @@ L’intero sviluppo ha seguito una metodologia di progettazione Top-Down, parten
 
 PER ULTERIORI INFORMAZIONI CONSULTARE:
 
+1) La relazione tecnica del software al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/tree/main/Relazione%20tecnica
+2) 
