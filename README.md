@@ -1,4 +1,4 @@
-# Progetto gestionale Gestionex - Software per la gestione logistica di un magazzino
+# Progetto gestionale Gestionex - Software per la gestione della logistica di un magazzino
 Gestionex è un software gestionale progettato per ottimizzare l’intera filiera logistica di un magazzino generico. Il sistema è stato sviluppato con un'architettura desktop-based in linguaggio C++ e supportato da un database SQL per la tracciabilità e l’organizzazione delle merci, degli ordini e delle spedizioni.
 
 L’obiettivo principale di Gestionex è quello di automatizzare e semplificare i tre processi fondamentali della logistica di magazzino:
