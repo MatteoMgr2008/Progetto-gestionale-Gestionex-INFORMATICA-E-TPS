@@ -19,7 +19,8 @@ Requisiti normativi: conformità alle normative fiscali italiane, alla gestione 
 
 L’intero sviluppo ha seguito una metodologia di progettazione Top-Down, partendo da una visione generale del sistema e suddividendo progressivamente le funzionalità in moduli specifici, garantendo una struttura solida, modulare e facilmente espandibile.
 
-PER ULTERIORI INFORMAZIONI CONSULTARE:
+## PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
-1) La relazione tecnica del software al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/tree/main/Relazione%20tecnica
-2) 
+- La relazione tecnica del software è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/tree/main/Relazione%20tecnica
+- Il diagramma UML delle classi è disponibile al seguente link:
+- Il diagramma TOP-DOWN raffigurante la logica del software è disponibile al seguente link:
