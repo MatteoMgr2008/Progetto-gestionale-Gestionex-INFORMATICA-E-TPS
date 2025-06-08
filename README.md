@@ -19,6 +19,8 @@ Il progetto ha previsto un’approfondita analisi dei requisiti, suddivisi in:
 
 L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, partendo da una visione generale del sistema e suddividendo progressivamente le funzionalità in moduli specifici, garantendo così una struttura solida, modulare e facilmente espandibile al software Gestionex.
 
+<p style="color:red"><strong>⚠️ Attenzione:</strong> proca</p>
+
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
 - La relazione tecnica del software è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/blob/main/Relazione%20tecnica/Es.%20di%20scrittura%20di%20una%20relazione%20tecnica%20riguardo%20lo%20sviluppo%20del%20software%20Gestionex.pdf
