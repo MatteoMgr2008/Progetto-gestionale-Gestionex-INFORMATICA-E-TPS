@@ -23,7 +23,7 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 1) Per prima cosa, scaricare il repository cliccando su Code -> Download ZIP
 2) Estrarre il contenuto dello ZIP attraverso programmi come WinRAR e 7Zip
 3) Dopo aver estratto i file, recarsi nella cartella "Versione compilata"
-4) Aprire Gestionex.exe senza spostare nessun file presente nella cartella
+4) Aprire Gestionex.exe senza spostare nessun file presente nella cartella compreso l'eseguibile stesso
 
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
