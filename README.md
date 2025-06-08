@@ -22,5 +22,5 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
 - La relazione tecnica del software è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/tree/main/Relazione%20tecnica
-- Il diagramma UML delle classi è disponibile al seguente link:
-- Il diagramma TOP-DOWN raffigurante la logica del software è disponibile al seguente link:
+- Il diagramma UML delle classi è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/blob/main/Diagrammi%20e%20grafici/Diagramma%20UML%20delle%20classi%20del%20codice%20in%20C%2B%2B.pdf
+- Il diagramma TOP-DOWN raffigurante la logica del software è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/blob/main/Diagrammi%20e%20grafici/Es.%20di%20realizzazione%20dell'approccio%20TOP-DOWN%20per%20il%20progetto.pdf
