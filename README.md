@@ -19,7 +19,7 @@ Il progetto ha previsto un’approfondita analisi dei requisiti, suddivisi in:
 
 L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, partendo da una visione generale del sistema e suddividendo progressivamente le funzionalità in moduli specifici, garantendo così una struttura solida, modulare e facilmente espandibile al software Gestionex.
 
-⚠️ **❗ `ATTENZONE N.B.:` ❗** Per scaricare il software Gestionex e provarlo gratuitamente sul proprio dispositivo Windows è necessiaro seguire i seguenti passaggi:
+⚠️ **❗** `ATTENZIONE N.B.:` **❗** Per scaricare il software Gestionex e provarlo gratuitamente sul proprio dispositivo Windows è necessiaro seguire i seguenti passaggi:
 
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
