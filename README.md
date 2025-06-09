@@ -25,8 +25,8 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 3) Aprire la cartella estratta ed aprire a sua volta la cartella "Versione compilata"
 4) Avviare Gestionex.exe senza spostare nessun file presente nella cartella (compreso l’eseguibile stesso)
 
-⚠️ ❗ PER LA RISOLUZIONE DEI PROBLEMI: ❗
-Se appare un messaggio di errore come “mancano DLL” quando avvii Gestionex.exe, prova a installare o reinstallare i Microsoft Visual C++ Redistributable:
+⚠️ ❗ `PER LA RISOLUZIONE DEI PROBLEMI:` ❗
+Se appare un messaggio di errore come “mancano DLL” quando si avvia il software Gestionex.exe, prova a installare o reinstallare i Microsoft Visual C++ Redistributable:
 
 Scarica e installa le versioni più recenti (aggiornate al 28 maggio 2025):
 
