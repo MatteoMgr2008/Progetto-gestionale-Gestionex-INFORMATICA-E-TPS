@@ -25,6 +25,19 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 3) Aprire la cartella estratta ed aprire a sua volta la cartella "Versione compilata"
 4) Avviare Gestionex.exe senza spostare nessun file presente nella cartella (compreso l’eseguibile stesso)
 
+⚠️ ❗ PER LA RISOLUZIONE DEI PROBLEMI: ❗
+Se appare un messaggio di errore come “mancano DLL” quando avvii Gestionex.exe, prova a installare o reinstallare i Microsoft Visual C++ Redistributable:
+
+Scarica e installa le versioni più recenti (aggiornate al 28 maggio 2025):
+
+Per sistemi 64-bit (x64):
+[Visual C++ Redistributable per Visual Studio 2015–2022 (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+
+Per sistemi 32-bit (x86):
+[Visual C++ Redistributable per Visual Studio 2015–2022 (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe)
+
+Questi pacchetti contengono le runtime più recenti (versione 14.44.35208.0) e coprono le versioni Visual Studio 2015, 2017, 2019 e 2022
+
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
 - La relazione tecnica del software è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/blob/main/Relazione%20tecnica/Es.%20di%20scrittura%20di%20una%20relazione%20tecnica%20riguardo%20lo%20sviluppo%20del%20software%20Gestionex.pdf
