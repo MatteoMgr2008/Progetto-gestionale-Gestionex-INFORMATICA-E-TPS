@@ -40,6 +40,8 @@ Per sistemi 32-bit (x86):
 
 Questi pacchetti contengono le runtime più recenti (versione 14.44.35208.0) e coprono le versioni Visual Studio 2015, 2017, 2019 e 2022.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
 - La relazione tecnica del software è disponibile al seguente link: https://github.com/MatteoMgr2008/Progetto-gestionale-Gestionex-INFORMATICA-E-TPS/blob/main/Relazione%20tecnica/Es.%20di%20scrittura%20di%20una%20relazione%20tecnica%20riguardo%20lo%20sviluppo%20del%20software%20Gestionex.pdf
