@@ -20,10 +20,10 @@ Il progetto ha previsto un’approfondita analisi dei requisiti, suddivisi in:
 L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, partendo da una visione generale del sistema e suddividendo progressivamente le funzionalità in moduli specifici, garantendo così una struttura solida, modulare e facilmente espandibile al software Gestionex.
 
 ⚠️ **❗** `ATTENZIONE N.B.:` **❗** Per scaricare il software Gestionex e provarlo gratuitamente sul proprio dispositivo Windows è necessiaro seguire i seguenti passaggi:
-1) Per prima cosa, scaricare il repository cliccando su Code -> Download ZIP
+1) Per prima cosa, scaricare il repository cliccando su Code → Download ZIP
 2) Estrarre il contenuto dello ZIP attraverso programmi come WinRAR e 7Zip
-3) Dopo aver estratto i file, recarsi nella cartella "Versione compilata"
-4) Aprire Gestionex.exe senza spostare nessun file presente nella cartella compreso l'eseguibile stesso
+3) Aprire la cartella estratta ed aprire a sua volta la cartella "Versione compilata"
+4) Avviare Gestionex.exe senza spostare nessun file presente nella cartella (compreso l’eseguibile stesso)
 
 ### PER ULTERIORI INFORMAZIONI RIGUARDO LO SVILUPPO DEL SOFTWARE CONSULTARE:
 
