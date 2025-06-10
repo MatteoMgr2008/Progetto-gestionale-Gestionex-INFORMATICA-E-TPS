@@ -26,8 +26,6 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 2) Estrarre il contenuto dello ZIP attraverso programmi come WinRAR e 7Zip
 3) Aprire la cartella estratta ed aprire a sua volta la cartella "Versione compilata"
 4) Avviare Gestionex.exe senza spostare nessun file presente nella cartella (compreso l’eseguibile stesso)
-   
-
 
 ⚠️ ❗ `PER LA RISOLUZIONE DEI PROBLEMI:` ❗
 Se appare un messaggio di errore come “mancano DLL” quando si avvia il software Gestionex.exe, provare a installare o reinstallare i Microsoft Visual C++ Redistributable:
