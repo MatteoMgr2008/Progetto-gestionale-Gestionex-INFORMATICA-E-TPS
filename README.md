@@ -39,7 +39,8 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 4) Avviare Gestionex.exe senza spostare nessun file presente nella cartella (compreso l’eseguibile stesso)
 
 ⚠️ ❗ `PER LA RISOLUZIONE DEI PROBLEMI:` ❗
-Se appare un messaggio di errore come “mancano DLL” quando si avvia il software Gestionex.exe, provare a installare o reinstallare i Microsoft Visual C++ Redistributable:
+Se all’avvio di Gestionex.exe compare un errore relativo a librerie dinamiche mancanti (es. "MSVCP140.dll non trovato" o "VCRUNTIME140.dll mancante"), significa che nel sistema non sono installate correttamente le dipendenze runtime di Microsoft Visual C++.
+In questo caso, è necessario quindi scaricare e installare (o reinstallare) i Microsoft Visual C++ Redistributable più recenti per assicurare la presenza delle librerie di runtime necessarie all’esecuzione del software.
 
 Scaricare e installare le versioni più recenti (aggiornate al 28 maggio 2025) da i link sottostanti:
 
