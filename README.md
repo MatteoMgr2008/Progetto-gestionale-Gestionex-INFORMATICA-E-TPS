@@ -30,7 +30,7 @@ L’intero sviluppo ha seguito una metodologia di progettazione TOP-DOWN, parten
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### PER SCARICARE E PROVARE GESTIONEX SEGUIRE I SEGUENTI PASSAGGI:
+### PER SCARICARE E PROVARE IL SOFTWARE GESTIONEX SEGUIRE I SEGUENTI PASSAGGI:
 
 ⚠️ **❗** `ATTENZIONE N.B.:` **❗** Per scaricare il software Gestionex e provarlo gratuitamente sul proprio dispositivo Windows è necessiaro seguire i seguenti passaggi:
 1) Per prima cosa, scaricare il repository cliccando su Code → Download ZIP
