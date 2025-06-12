@@ -1,5 +1,7 @@
 # Progetto gestionale Gestionex - Software per la gestione della logistica di un magazzino
 
+### VIDEO DI PRESENTAZIONE DEL SOFTWARE GESTIONEX:
+
 https://github.com/user-attachments/assets/1bcbd611-9cbc-46d4-8c0c-3dcf159d16c6
 
 ### INTRODUZIONE AL SOFTWARE GESTIONEX:
