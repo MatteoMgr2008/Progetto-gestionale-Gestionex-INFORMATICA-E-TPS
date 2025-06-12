@@ -4,6 +4,8 @@
 
 https://github.com/user-attachments/assets/1bcbd611-9cbc-46d4-8c0c-3dcf159d16c6
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### INTRODUZIONE AL SOFTWARE GESTIONEX:
 
 Gestionex è un software gestionale progettato per ottimizzare l’intera filiera logistica di un magazzino generico. Il sistema è stato sviluppato con un'architettura desktop-based in linguaggio C++ e supportato da un database SQL (ancora in fase di sviluppo) per la tracciabilità e l’organizzazione delle merci, degli ordini e delle spedizioni.
